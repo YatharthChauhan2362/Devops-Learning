@@ -22,9 +22,10 @@
 # docker build
 
 - The docker build command is used to build a Docker image from a Dockerfile. A Dockerfile is a text file that contains the instructions for building a Docker image.
-  It specifies the base image to use, the packages to install, and any other configuration or dependencies that are required.
 
-      docker build [OPTIONS] PATH | URL | -
+It specifies the base image to use, the packages to install, and any other configuration or dependencies that are required.
+
+    docker build [OPTIONS] PATH | URL | -
 
 - The PATH argument specifies the location of the directory that contains the Dockerfile. You can either provide the path to the directory on the local filesystem, or you can specify a URL to a Git repository that contains the Dockerfile.
 
@@ -45,6 +46,18 @@ For example, you can use the -t option to specify a name and optionally a tag fo
 - You can use the --build-arg option to pass build-time variables to the Docker build process. These variables can be used in the Dockerfile to parameterize the build process.
 
   docker build --build-arg MY_VAR=123 .
+
+# docker run
+
+- The docker run command is used to run a Docker container. The -it and -d options are commonly used with docker run.
+
+- The -it option stands for "interactive" and "tty", and it allows you to run the container in an interactive shell.
+  This is useful if you want to run a command-line application in a container and interact with it in real-time.
+
+- The -d option stands for "detached", and it runs the container in the background as a daemon.
+  This is useful if you want to run a container and leave it running in the background.
+
+  docker run -it -d my-image
 
 # docker start
 
@@ -70,20 +83,6 @@ For example, to start a container with the ID 7e38f2f1c567, you would run:
 
 # docker ps
 
-# docker logs
-
-# docker pull
-
-- The docker pull command is used to pull or download a Docker image from a registry. You can use it to pull images from the default Docker Hub registry or from a private registry.
-
-Here is the basic syntax for docker pull:
-
-    docker pull [OPTIONS] NAME[:TAG|@DIGEST]
-
-For example, to pull the latest version of the alpine image from the Docker Hub registry, you would run:
-
-     docker pull ubuntu
-
 # docker images
 
 - The docker images command is used to list the images that are available on a Docker host. It shows the repository, tag, and ID of each image.
@@ -100,17 +99,31 @@ To list only the images from the alpine repository, you would run:
 
     docker images ubuntu
 
-# docker run
+# docker exec
 
-- The docker run command is used to run a Docker container. The -it and -d options are commonly used with docker run.
+- The docker exec command is used to run a command in a running Docker container. The -ti options are commonly used with docker exec.
 
-- The -it option stands for "interactive" and "tty", and it allows you to run the container in an interactive shell.
-  This is useful if you want to run a command-line application in a container and interact with it in real-time.
+- The -t option stands for "tty", and it allocates a pseudo-tty for the container. This is useful if you want to run an interactive command that requires a tty, such as a shell.
 
-- The -d option stands for "detached", and it runs the container in the background as a daemon.
-  This is useful if you want to run a container and leave it running in the background.
+- The -i option stands for "interactive", and it allows you to interact with the container in real-time. This is useful if you want to run a command and receive output from it in real-time.
 
-      docker run -it -d my-image
+  docker exec -ti my-container bash
+
+  docker exec my-container cat /etc/hosts
+
+# docker logs
+
+# docker pull
+
+- The docker pull command is used to pull or download a Docker image from a registry. You can use it to pull images from the default Docker Hub registry or from a private registry.
+
+Here is the basic syntax for docker pull:
+
+    docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+For example, to pull the latest version of the alpine image from the Docker Hub registry, you would run:
+
+    docker pull ubuntu
 
 # docker ps
 
@@ -161,17 +174,3 @@ For example, the value 80:80 maps the host port 80 to the container port 80.
 For example:
 
     docker run -p 80:80 -p 443:443 my-image
-
-# docker exec
-
-- The docker exec command is used to run a command in a running Docker container. The -ti options are commonly used with docker exec.
-
-- The -t option stands for "tty", and it allocates a pseudo-tty for the container. This is useful if you want to run an interactive command that requires a tty, such as a shell.
-
-- The -i option stands for "interactive", and it allows you to interact with the container in real-time. This is useful if you want to run a command and receive output from it in real-time.
-
-  docker exec -ti my-container bash
-
-docker exec my-container cat /etc/hosts
-
-docker exec my-container cat /etc/hosts
