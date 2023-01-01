@@ -6,10 +6,15 @@
 ## DOCKER NETWORKS:
 
 docker network create: Create a new network
+
 docker network inspect: Display detailed information on one or more networks
+
 docker network ls: List all networks
+
 docker network rm: Remove one or more networks
+
 docker network connect: Connect a container to a network
+
 docker network disconnect: Disconnect a container from a network
 
 Here is an example usage of these commands:
