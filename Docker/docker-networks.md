@@ -1,24 +1,24 @@
 # **WELCOME TO THE DOCKER COMMANDS**
 
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
-    TOPIC:          Docker Commands
+    TOPIC:          Docker Networks
 
 ## DOCKER NETWORKS:
 
 - Docker networks are virtual networks that allow containers to communicate with each other and the host system.
   They are created and managed by the Docker engine and can be used to isolate containers from each other or to allow them to communicate.
 
-docker network create: Create a new network
+- docker network create: Create a new network
 
-docker network inspect: Display detailed information on one or more networks
+- docker network inspect: Display detailed information on one or more networks
 
-docker network ls: List all networks
+- docker network ls: List all networks
 
-docker network rm: Remove one or more networks
+- docker network rm: Remove one or more networks
 
-docker network connect: Connect a container to a network
+- docker network connect: Connect a container to a network
 
-docker network disconnect: Disconnect a container from a network
+- docker network disconnect: Disconnect a container from a network
 
 Here is an example usage of these commands:
 
