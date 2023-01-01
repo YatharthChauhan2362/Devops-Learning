@@ -5,8 +5,8 @@
 
 ## DOCKER NETWORKS:
 
-- Docker networks are virtual networks that allow containers to communicate with each other and the host system.
-  They are created and managed by the Docker engine and can be used to isolate containers from each other or to allow them to communicate.
+Docker networks are virtual networks that allow containers to communicate with each other and the host system.
+They are created and managed by the Docker engine and can be used to isolate containers from each other or to allow them to communicate.
 
 - docker network create: Create a new network
 
