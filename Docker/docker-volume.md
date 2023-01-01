@@ -55,3 +55,48 @@ For an Example:
 
     # Remove all unused volumes
     $ docker volume prune
+
+# Docker --volume:
+
+- The --volume flag is used to bind mount a volume from the host machine into the container.
+- This allows you to share data between the container and the host, and persist data even after the container is stopped or removed.
+
+Syntax:
+
+    docker run [OPTIONS] IMAGE [COMMAND] [ARG...] --volume SOURCE:DESTINATION
+
+Example:
+
+    docker run --name mycontainer -v /host/folder:/container/folder myimage
+
+This command will bind mount the folder /host/folder from the host machine into the container at the path /container/folder.
+
+# Docker --mount:
+
+- The --mount flag is used to specify a mount point for a volume, bind mount, or tmpfs mount in the container. It allows you to specify additional options for the mount, such as read-only or shared.
+
+Syntax:
+
+    docker run [OPTIONS] IMAGE [COMMAND] [ARG...] --mount type=TYPE,source=SOURCE,destination=DESTINATION[,readonly]
+
+Example:
+
+    docker run --name mycontainer -m type=bind,source=/host/folder,destination=/container/folder,readonly myimage
+
+This command will bind mount the folder /host/folder from the host machine into the container at the path /container/folder, and set the mount as read-only.
+
+# Docker --TMPFS:
+
+- The --TMPFS flag is used to create a temporary filesystem (tmpfs) in the container.
+- This is a volatile filesystem that is stored in memory and is not persisted after the container is stopped or removed.
+- It is useful for storing temporary data that does not need to be persisted.
+
+Syntax:
+
+    docker run [OPTIONS] IMAGE [COMMAND] [ARG...] --tmpfs DESTINATION[:OPTIONS]
+
+Example:
+
+    docker run --name mycontainer --tmpfs /container/tmp:rw,size=64M myimage
+
+This command will create a tmpfs mount at the path /container/tmp in the container, with read-write permissions and a size of 64MB.
