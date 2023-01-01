@@ -261,7 +261,7 @@ There are several options that you can use with docker logs to control the outpu
 
 --timestamps option to include timestamps in the output.
 
-## docker login
+# docker login
 
 The docker login command is used to log in to a Docker registry. A registry is a repository for Docker images, and it allows you to share your images with others or to use images created by others.
 
@@ -287,7 +287,7 @@ For example:
 
 Keep in mind that you need to be logged in to a registry before you can push an image to the registry or pull an image from the registry.
 
-## docker push
+# docker push
 
 The docker push command is used to upload a Docker image to a registry. A registry is a repository for Docker images, and it allows you to share your images with others or to use images created by others.
 
@@ -338,7 +338,7 @@ For an Example:
 This command creates a new image called "my_image" with the tag "v1" based on the changes made to the container "my_container".
 The new image will include all of the changes made to the container, such as installed software, modified configuration files, and new files.
 
-## docker tag
+# docker tag
 
 The docker tag command is used to add a tag to a Docker image in a registry.
 
