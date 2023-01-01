@@ -39,21 +39,19 @@ For an Example:
     # Inspect the "my_volume" volume
     $ docker volume inspect my_volume
     [
-    {
-        "CreatedAt": "2022-01-01T00:00:00Z",
-        "Driver": "local",
-        "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/my_volume/_data",
-        "Name": "my_volume",
-        "Options": {},
-        "Scope": "local"
-    }
+        {
+            "CreatedAt": "2022-01-01T00:00:00Z",
+            "Driver": "local",
+            "Labels": {},
+            "Mountpoint": "/var/lib/docker/volumes/my_volume/_data",
+            "Name": "my_volume",
+            "Options": {},
+            "Scope": "local"
+        }
     ]
 
     # Remove the "my_volume" volume
-
     $ docker volume rm my_volume
 
     # Remove all unused volumes
-
     $ docker volume prune
