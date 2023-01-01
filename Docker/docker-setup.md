@@ -110,7 +110,9 @@ Syntax:
 
     docker rm [OPTIONS] CONTAINER [CONTAINER...]
 
-To remove a container, you need to provide the container ID or name as an argument. For example, to remove a container with the ID 7e38f2f1c567, you would run:
+To remove a container, you need to provide the container ID or name as an argument.
+
+For example, to remove a container with the ID 7e38f2f1c567, you would run:
 
     docker rm 7e38f2f1c567
 
@@ -190,15 +192,23 @@ To list only the images from the alpine repository, you would run:
 
 # docker exec
 
-The docker exec command is used to run a command in a running Docker container. The -ti options are commonly used with docker exec.
+The docker exec command allows you to run a command in a running Docker container.
+This can be useful for debugging or for running scripts or commands inside the container.
 
-The -t option stands for "tty", and it allocates a pseudo-tty for the container. This is useful if you want to run an interactive command that requires a tty, such as a shell.
+Syntax:
 
-The -i option stands for "interactive", and it allows you to interact with the container in real-time. This is useful if you want to run a command and receive output from it in real-time.
+    docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
-    docker exec -ti my-container bash
+For example, to run the ls command in a container with the ID ee2f8cec8123.
 
-    docker exec my-container cat /etc/hosts
+    docker exec ee2f8cec8123 ls
+
+This will run the ls command in the specified container and display the output.
+
+-i option to run the command interactively.
+-t option to allocate a pseudo-TTY.
+-w option to specify the working directory in which the command should be run.
+--user option to specify the user that should be used to run the command.
 
 # docker logs
 
