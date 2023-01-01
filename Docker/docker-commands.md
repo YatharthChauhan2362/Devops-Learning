@@ -52,7 +52,7 @@ For example, you can use the -t option to specify a name and optionally a tag fo
 
     docker build -t my-image:latest .
 
-You can use the --build-arg option to pass build-time variables to the Docker build process. These variables can be used in the Dockerfile to parameterize the build process.
+--build-arg option to pass build-time variables to the Docker build process. These variables can be used in the Dockerfile to parameterize the build process.
 
     docker build --build-arg MY_VAR=123 .
 
@@ -105,7 +105,7 @@ You can also stop multiple containers at the same time by providing multiple con
 By default, docker stop sends a SIGTERM signal to the main process inside the container, which allows the process to clean up and terminate gracefully.
 If the process does not exit within a specified timeout, docker stop will send a SIGKILL signal to force the process to terminate.
 
-You can use the --time option to specify the timeout in seconds.
+--time option to specify the timeout in seconds.
 The default timeout is 10 seconds.
 
     docker stop --time 20 7e38f2f1c567
@@ -149,7 +149,8 @@ You can also remove multiple containers at the same time by providing multiple c
 
     docker rm 7e38f2f1c567 9b1702f8e492
 
-By default, docker rm will only remove stopped containers. If you want to remove a running container, you can use the -f or --force option to force the removal of the container.
+By default, docker rm will only remove stopped containers.
+If you want to remove a running container, you can use the -f or --force option to force the removal of the container.
 
     docker rm -f 7e38f2f1c567
 
@@ -283,7 +284,9 @@ For example:
     $ docker login my_registry
 
 --password to specify the password on the command line (instead of being prompted for it)
+
 --username to specify the username on the command line
+
 --help to view a list of all available options.
 
 Keep in mind that you need to be logged in to a registry before you can push an image to the registry or pull an image from the registry.
@@ -307,7 +310,9 @@ For example:
     $ docker push my_registry/my_image:v1
 
 --disable-content-trust to disable image signing
+
 --dry-run to perform a trial run without actually pushing the image
+
 --help to view a list of all available options.
 
 # docker pull
@@ -374,6 +379,7 @@ Syntax:
 Options:
 
 -f, --format string: Format the output using the given Go template
+
 -s, --size: Display total file sizes if the container has a filesystem
 
 Example:
@@ -383,6 +389,7 @@ Example:
 This command will display detailed information about the container with the name "mycontainer".
 
 --format option to specify a Go template for formatting the output
+
 --size option to display the total file sizes of the container's filesystem.
 
 Example:
