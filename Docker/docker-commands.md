@@ -109,6 +109,16 @@ The default timeout is 10 seconds.
 
     docker stop --time 20 7e38f2f1c567
 
+# docker kill
+
+To kill a running Docker container, you can use the docker kill command followed by the name or ID of the container.
+
+For example:
+
+    $ docker kill my_container
+
+This will send a SIGKILL signal to the process running in the container, which will cause the process to terminate immediately.
+
 # docker restart
 
 To restart a Docker container, you can use the docker restart command followed by the name or ID of the container.
@@ -206,7 +216,7 @@ For example, to list all images that are stored locally on the host, you would r
 
 To list only the images from the alpine repository, you would run:
 
-    docker images ubuntu
+    docker images my-image
 
 # docker exec
 
@@ -309,35 +319,9 @@ Here is the basic syntax for docker pull:
 
 For example, to pull the latest version of the alpine image from the Docker Hub registry, you would run:
 
-     docker pull ubuntu
+     docker pull my-image
 
-# docker run -p
-
-The -p option is used with the docker run command to publish a container's port to the host. It maps a container port to a host port, so that traffic to the host port is forwarded to the container port.
-
-The -p option takes a value in the form HOST_PORT:CONTAINER_PORT.
-
-For example, the value 80:80 maps the host port 80 to the container port 80.
-
-    docker run -p 80:80 my-image
-
-You can specify multiple -p options to publish multiple ports.
-
-For example:
-
-    docker run -p 80:80 -p 443:443 my-image
-
-# docker kill
-
-To kill a running Docker container, you can use the docker kill command followed by the name or ID of the container.
-
-For example:
-
-    $ docker kill my_container
-
-This will send a SIGKILL signal to the process running in the container, which will cause the process to terminate immediately.
-
-## docker commit
+# docker commit
 
 The docker commit command is used to create a new Docker image from a container's changes. When you make changes to a container, such as installing software, modifying configuration files, or writing new files, those changes are not saved to the original image from which the container was created.
 
