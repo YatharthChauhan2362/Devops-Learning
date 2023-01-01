@@ -23,6 +23,7 @@
     docker kill - To kill a running Docker container
     docker commit - To save the changes and create a new image
     docker tag - To add a tag to a Docker image in a registry.
+    docker container inspect: This command displays detailed information about a specific container.
 
 # docker installation
 
@@ -361,3 +362,31 @@ For example:
     $ docker tag my_image:v1 my_registry/my_image:v1
 
 This command creates a new image called "my_image:v1" in the registry "my_registry", based on the image "my_image:v1" in the local image store.
+
+# docker container inspect:
+
+- The docker container inspect command is used to view detailed information about a specific Docker container. This includes metadata, configuration, network settings, and runtime details.
+
+Syntax:
+
+    docker container inspect [OPTIONS] CONTAINER
+
+Options:
+
+-f, --format string: Format the output using the given Go template
+-s, --size: Display total file sizes if the container has a filesystem
+
+Example:
+
+    docker container inspect mycontainer
+
+This command will display detailed information about the container with the name "mycontainer".
+
+--format option to specify a Go template for formatting the output
+--size option to display the total file sizes of the container's filesystem.
+
+Example:
+
+    docker container inspect mycontainer --format "{{ .NetworkSettings.IPAddress }}"
+
+This command will display the IP address of the container with the name "mycontainer".
