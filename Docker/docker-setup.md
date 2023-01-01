@@ -21,9 +21,10 @@
 
 # docker build
 
-The docker build command is used to build a Docker image from a Dockerfile. A Dockerfile is a text file that contains the instructions for building a Docker image. It specifies the base image to use, the packages to install, and any other configuration or dependencies that are required.
+- The docker build command is used to build a Docker image from a Dockerfile. A Dockerfile is a text file that contains the instructions for building a Docker image.
+  It specifies the base image to use, the packages to install, and any other configuration or dependencies that are required.
 
-    docker build [OPTIONS] PATH | URL | -
+      docker build [OPTIONS] PATH | URL | -
 
 The PATH argument specifies the location of the directory that contains the Dockerfile. You can either provide the path to the directory on the local filesystem, or you can specify a URL to a Git repository that contains the Dockerfile.
 
@@ -35,7 +36,9 @@ To build a Docker image from a Dockerfile in a different directory, you would ru
 
     docker build /path/to/directory
 
-You can use various options with the docker build command to modify its behavior. For example, you can use the -t option to specify a name and optionally a tag for the image in the name:tag format.
+You can use various options with the docker build command to modify its behavior.
+
+For example, you can use the -t option to specify a name and optionally a tag for the image in the name:tag format.
 
     docker build -t my-image:latest .
 
@@ -49,7 +52,9 @@ The docker start command is used to start a stopped Docker container. It is used
 
     docker start [OPTIONS] CONTAINER [CONTAINER...]
 
-To start a container, you need to provide the container ID or name as an argument. For example, to start a container with the ID 7e38f2f1c567, you would run:
+To start a container, you need to provide the container ID or name as an argument.
+
+For example, to start a container with the ID 7e38f2f1c567, you would run:
 
     docker start 7e38f2f1c567
 
@@ -123,7 +128,9 @@ To list all containers (both running and stopped), you would run:
 
     docker ps -a
 
-You can also use the -f option to filter the list of containers by providing a filter expression. For example, to list all containers that are using the alpine image, you would run:
+You can also use the -f option to filter the list of containers by providing a filter expression.
+
+For example, to list all containers that are using the alpine image, you would run:
 
     docker ps -f "image=alpine"
 
@@ -143,11 +150,15 @@ The --name option allows you to specify a name for the container. This can be us
 
 The -p option is used with the docker run command to publish a container's port to the host. It maps a container port to a host port, so that traffic to the host port is forwarded to the container port.
 
-The -p option takes a value in the form HOST_PORT:CONTAINER_PORT. For example, the value 80:80 maps the host port 80 to the container port 80.
+The -p option takes a value in the form HOST_PORT:CONTAINER_PORT.
+
+For example, the value 80:80 maps the host port 80 to the container port 80.
 
     docker run -p 80:80 my-image
 
-You can specify multiple -p options to publish multiple ports. For example:
+You can specify multiple -p options to publish multiple ports.
+
+For example:
 
     docker run -p 80:80 -p 443:443 my-image
 
