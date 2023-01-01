@@ -1,7 +1,7 @@
 # **WELCOME TO THE NGINX DOCKER**
 
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
-    TOPIC:        NGINX Docker
+    TOPIC:          NGINX Docker
 
 ## NGINX:
 

@@ -9,12 +9,20 @@
     docker run - Run a command in a new container
     docker start - Start one or more stopped containers
     docker stop - Stop one or more running containers
+    docker kill - To kill a running Docker container
+    docker restart - restart a Docker container
     docker rm - Remove one or more containers
     docker rmi - Remove one or more images
     docker ps - List containers
     docker images - List images
     docker exec - Run a command in a running container
     docker logs - Fetch the logs of a container
+    docker login - log in to a Docker registry
+    docker push - upload a Docker image to a registry
+    docker pull - download a Docker image from a registry
+    docker kill - To kill a running Docker container
+    docker commit - To save the changes and create a new image
+    docker tag - To add a tag to a Docker image in a registry.
 
 # docker installation
 
@@ -318,16 +326,6 @@ You can specify multiple -p options to publish multiple ports.
 For example:
 
     docker run -p 80:80 -p 443:443 my-image
-
-# docker stop
-
-To kill a running Docker container, you can use the docker kill command followed by the name or ID of the container.
-
-For example:
-
-    $ docker kill my_container
-
-This command sends a SIGTERM signal to the process running in the container, which allows the process to terminate itself gracefully.
 
 # docker kill
 
