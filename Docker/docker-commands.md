@@ -101,6 +101,16 @@ The default timeout is 10 seconds.
 
     docker stop --time 20 7e38f2f1c567
 
+# docker restart
+
+To restart a Docker container, you can use the docker restart command followed by the name or ID of the container.
+
+For example:
+
+    $ docker restart my_container
+
+This command stops and then starts the container. When you restart a container, all of its processes are terminated, and then the processes are started again.
+
 # docker rm
 
 The docker rm command is used to remove one or more Docker containers.
@@ -233,6 +243,54 @@ There are several options that you can use with docker logs to control the outpu
 
 --timestamps option to include timestamps in the output.
 
+## docker login
+
+The docker login command is used to log in to a Docker registry. A registry is a repository for Docker images, and it allows you to share your images with others or to use images created by others.
+
+The basic syntax for docker login is:
+
+    $ docker login [OPTIONS] [SERVER]
+
+Here is an example of how to use docker login:
+
+    $ docker login
+
+This command prompts you for your Docker ID and password, and then logs you in to the default registry (Docker Hub).
+
+You can also specify the registry URL as the "SERVER" parameter if you want to log in to a different registry.
+
+For example:
+
+    $ docker login my_registry
+
+--password to specify the password on the command line (instead of being prompted for it)
+--username to specify the username on the command line
+--help to view a list of all available options.
+
+Keep in mind that you need to be logged in to a registry before you can push an image to the registry or pull an image from the registry.
+
+## docker push
+
+The docker push command is used to upload a Docker image to a registry. A registry is a repository for Docker images, and it allows you to share your images with others or to use images created by others.
+
+The basic syntax for docker push is:
+
+    $ docker push [OPTIONS] NAME[:TAG]
+
+Here is an example of how to use docker push:
+
+    $ docker push my_image:v1
+
+This command pushes the image "my_image:v1" to the default registry (Docker Hub). If you are using a different registry, you can specify the registry URL as part of the image name.
+
+For example:
+
+    $ docker push my_registry/my_image:v1
+
+--disable-content-trust to disable image signing
+--dry-run to perform a trial run without actually pushing the image
+--help to view a list of all available options.
+
 # docker pull
 
 The docker pull command is used to pull or download a Docker image from a registry. You can use it to pull images from the default Docker Hub registry or from a private registry.
@@ -260,3 +318,64 @@ You can specify multiple -p options to publish multiple ports.
 For example:
 
     docker run -p 80:80 -p 443:443 my-image
+
+# docker stop
+
+To kill a running Docker container, you can use the docker kill command followed by the name or ID of the container.
+
+For example:
+
+    $ docker kill my_container
+
+This command sends a SIGTERM signal to the process running in the container, which allows the process to terminate itself gracefully.
+
+# docker kill
+
+To kill a running Docker container, you can use the docker kill command followed by the name or ID of the container.
+
+For example:
+
+    $ docker kill my_container
+
+This will send a SIGKILL signal to the process running in the container, which will cause the process to terminate immediately.
+
+## docker commit
+
+The docker commit command is used to create a new Docker image from a container's changes. When you make changes to a container, such as installing software, modifying configuration files, or writing new files, those changes are not saved to the original image from which the container was created.
+
+To save the changes and create a new image, you can use docker commit.
+
+syntax:
+
+    $ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+
+For an Example:
+
+    $ docker commit my_container my_image:v1
+
+This command creates a new image called "my_image" with the tag "v1" based on the changes made to the container "my_container".
+The new image will include all of the changes made to the container, such as installed software, modified configuration files, and new files.
+
+## docker tag
+
+The docker tag command is used to add a tag to a Docker image in a registry.
+
+Tagging an image is useful for organizing images in a registry, and for referring to specific versions of an image when deploying applications.
+
+Syntax:
+
+    $ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Here is an example of how to use docker tag:
+
+    $ docker tag my_image:v1 my_image:latest
+
+This command adds the tag "latest" to the image "my_image" with the tag "v1".
+
+You can also use docker tag to create a new image in a different registry.
+
+For example:
+
+    $ docker tag my_image:v1 my_registry/my_image:v1
+
+This command creates a new image called "my_image:v1" in the registry "my_registry", based on the image "my_image:v1" in the local image store.
