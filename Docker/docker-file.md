@@ -3,13 +3,13 @@
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
     TOPIC:          Docker File
 
-## Docker File
+## DOCKER FILE
 
 A Dockerfile is a text file that contains all the commands a user could call on the command line to assemble an image.
 
 When you run docker build, the Docker engine takes the instructions in the Dockerfile and creates a new image.
 
-## Dockerfile Commands
+## DOCKERFILE COMMANDS:
 
 FROM: Specifies the base image that the image should be built on top of.
 
