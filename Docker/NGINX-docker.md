@@ -5,9 +5,9 @@
 
 ## NGINX:
 
-NGINX is a popular open-source web server that can be used with Docker to run web applications in a containerized environment.
+- NGINX is a popular open-source web server that can be used with Docker to run web applications in a containerized environment.
 
-To use NGINX with Docker, you will need to follow these steps:
+- To use NGINX with Docker, you will need to follow these steps:
 
 1. Install Docker on your host machine. If you don't already have Docker installed, you can download it from the Docker website or use a package manager to install it.
 

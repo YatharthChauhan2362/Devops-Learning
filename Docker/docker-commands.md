@@ -3,7 +3,7 @@
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
     TOPIC:          Docker Commands
 
-## Common Docker commands:
+## COMMON DOCKER COMMANDS IN LINUX:
 
     docker build - Build an image from a Dockerfile
     docker run - Run a command in a new container
