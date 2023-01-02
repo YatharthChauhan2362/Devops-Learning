@@ -19,7 +19,7 @@
 
 ## Benefits of jenkins:
 
-1. Continuous Integration:
+# 1. Continuous Integration:
 
 - Jenkins allows developers to automatically build and test their code changes, ensuring that any errors or issues are identified and fixed as soon as possible. This helps to reduce the time and effort needed to manually build and test code, and ensures that code changes are integrated into the main codebase more quickly and efficiently.
 
