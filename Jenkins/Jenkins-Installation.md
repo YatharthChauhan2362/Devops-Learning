@@ -5,7 +5,7 @@
 
 ## JENKINS INSTALLATION COMMANDS:
 
-To install Jenkins on a Linux machine, you can follow these steps:
+- To install Jenkins on a Linux machine, you can follow these steps:
 
 Java jdk must be required:
 
