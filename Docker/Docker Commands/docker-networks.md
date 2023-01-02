@@ -40,7 +40,7 @@ Here is an example usage of these commands:
     # Remove the network "my-network"
     docker network rm my-network
 
-## Bridge Network
+## Bridge Network:
 
 - A bridge network is a virtual network created by Docker that allows containers to communicate with each other and the host system. It is created by default when you install Docker.
 
@@ -56,7 +56,7 @@ Disconnect a container from a bridge network:
 
     docker run -it -d --network my-network --name my-container my-image
 
-## Host Network
+## Host Network:
 
 - A host network is a network that is created by Docker and shares the host system's network stack. Containers connected to a host network can communicate with the host system and other containers on the same host, but are isolated from other networks.
 
@@ -72,7 +72,7 @@ Disconnect a container from a host network:
 
     docker run -it -d --network my-network --name my-container my-image
 
-## Overlay Network
+## Overlay Network:
 
 - An overlay network allows containers on different Docker hosts to communicate with each other. It is created using the Docker Swarm mode and allows containers to communicate across multiple Docker hosts.
 
@@ -88,7 +88,7 @@ Disconnect a container from a overlay network:
 
     docker run -it -d --network my-network --name my-container my-image
 
-## None Network
+## None Network:
 
 - A none network is a special network type that removes all network access from a container. It is used to create containers that do not have any network connectivity.
 

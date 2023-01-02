@@ -1,9 +1,9 @@
-# **WELCOME TO THE DOCKER FILE**
+# **WELCOME TO THE DOCKER COMMANDS**
 
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
     TOPIC:          Docker File
 
-## DOCKER FILE
+## DOCKER FILE:
 
 - A Dockerfile is a text file that contains all the commands a user could call on the command line to assemble an image.
 

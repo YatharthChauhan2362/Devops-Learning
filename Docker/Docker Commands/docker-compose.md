@@ -1,7 +1,7 @@
 # **WELCOME TO THE DOCKER COMMANDS**
 
     AUTHOR:         Yatharth Chauhan  (Github: YatharthChauhan2362)
-    TOPIC:          Docker Networks
+    TOPIC:          Docker Compose
 
 ## DOCKER COMPOSE:
 

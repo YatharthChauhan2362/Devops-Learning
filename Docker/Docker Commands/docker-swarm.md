@@ -48,7 +48,7 @@ This command initializes a Swarm cluster on the current host.
 
 This command adds a new node to the Swarm cluster as a worker. The TOKEN and MANAGER_IP:PORT are provided by the Swarm manager.
 
-docker swarm join --token <TOKEN> <MANAGER_IP>:<PORT>
+    docker swarm join --token <TOKEN> <MANAGER_IP>:<PORT>
 
 This command lists all the nodes in the Swarm cluster.
 
