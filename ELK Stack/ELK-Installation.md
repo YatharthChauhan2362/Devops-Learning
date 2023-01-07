@@ -27,7 +27,7 @@ install the apt-transport-https package:
 
     sudo apt-get install apt-transport-https
     
-4Add the Elastic repository to your system’s repository list:
+Add the Elastic repository to your system’s repository list:
 
     echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee –a /etc/apt/sources.list.d/elastic-7.x.list\
     
@@ -45,4 +45,22 @@ Install Elasticsearch with the following command:
     
     sudo apt install logstash
     
+
+server {
+    listen 80;
+
+        server name <Instance Private IP>;
+
+        auth basic "Restricted Access";
+        auth_basic_user_file /etc/nginx/htpasswd.users;
+        
+        location / {
+        proxy_pass http://loca1host:5601>;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade' ;
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 
