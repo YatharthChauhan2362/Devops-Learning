@@ -46,12 +46,56 @@ Install Elasticsearch with the following command:
     sudo apt install logstash
     
     sudo apt install filebeat
-
-
-server {
+    
+    sudo nano /etc/elasticsearch/elasticsearch.yml
+    
+    # Uncommeted below commands in file:
+    cluster.name: my-application
+    path.data: /var/lib/elasticsearch
+    path.logs: /var/log/elasticsearch
+    network.host: localhost
+    http.port: 9200
+    
+    sudo systemctl start elasticsearch
+    
+    sudo systemctl status  elasticsearch
+    
+    sudo apt  install curl
+    
+    curl localhost:9200
+    
+    sudo nano /etc/kibana/kibana.yml
+    
+    # Uncommeted below commands in file:
+    server.port: 5601
+    server.host: "localhost"
+    
+    systemctl start kibana
+    
+    sudo systemctl status  kibana
+    
+    sudo systemctl nginx
+    
+    systemctl status nginx
+    
+    sudo apt install apache2-utils
+    
+    sudo htpasswd -c /etc/nginx/htpasswd.users my-username
+    
+    sudo nano /etc/nginx/htpasswd.users
+    
+    sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/new-default
+    
+    sudo nano /etc/nginx/sites-available/new-default
+    
+    sudo nano /etc/nginx/sites-available/default
+    
+    # Enter Script in file:
+    
+    server {
        listen 80;
 
-       server_name 192.168.10.129;
+       server_name my-private-ip;
 
        auth_basic "Restricted Access";
        auth_basic_user_file /etc/nginx/htpasswd.users;
@@ -65,5 +109,36 @@ server {
               proxy_cache_bypass $http_upgrade;
        }
     }
+    
+    sudo systemctl restart nginx
+    
+    systemctl status nginx
+    
+Enter Private Ip in browser and kibana will starting.
+    
+    
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
 
     
