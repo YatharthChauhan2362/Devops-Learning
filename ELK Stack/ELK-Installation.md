@@ -46,6 +46,28 @@ Install Elasticsearch with the following command:
     sudo apt install logstash
     
     sudo apt install filebeat
+
+
+
+
+
+server {
+    listen 80;
+
+        server name <Instance Private IP>;
+
+        auth basic "Restricted Access";
+        auth_basic_user_file /etc/nginx/htpasswd.users;
+        
+        location / {
+        proxy_pass http://loca1host:5601>;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade' ;
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
     
     
 
